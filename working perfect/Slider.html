@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width">    <title></title>
+    
+    <!-- Insert to your webpage before the </head> -->
+    <script src="carouselengine/jquery.js"></script>
+    <script src="carouselengine/jquery.min.js"></script> 
+    <script src="carouselengine/jquery.visible.js"></script> 
+    <script src="carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="carouselengine/initcarousel-1.css">
+    <script src="carouselengine/initcarousel-1.js"></script>
+	<script src="carouselengine/selfcoded.js"></script>
+    
+	<script type="text/javascript">
+	    $(document).ready(function () {
+
+	        call();
+
+	        function call() {
+
+	            $(".amazingcarousel-list").find("img").attr("style", "opacity:0.5 ");	            
+
+	            var scroll = 0;
+	            var imgCount = $(".amazingcarousel-list img").length;
+
+	            var width = window.innerWidth;
+	            var totImage = 0;
+	            var arr = new Array();
+	            for (i = 0; i < imgCount; i++) {
+
+	                var imgVisible = $(".amazingcarousel-list img:eq(" + i + ")").visible();
+	                if (imgVisible == true) {
+	                    var imgLeft = $(".amazingcarousel-item img:eq(" + i + ")").offset().left;
+	                    if (imgLeft < width) {
+	                        arr[totImage] = i;
+	                        totImage += 1;
+	                    }
+	                }
+
+	            }
+
+	            var midImgPos = Math.ceil(totImage / 2);
+	            var midImageIndex = $(".amazingcarousel-list img").index($(".amazingcarousel-list img:eq(" + arr[midImgPos - 1] + ")"));
+
+
+	            $(".amazingcarousel-list img:eq(" + midImageIndex + ")").attr("style", " opacity:1.0 !important");
+	           // alert(midImageIndex);
+//	            $(".abcd.div:eq(" + midImageIndex + ")").attr("style", " position: relative;margin: 0px 0px!important;margin-top: -10% !important;height: 186px !important;");
+	           //$(".amazingcarousel-list div.abcd :eq(" + midImageIndex + ")").attr("style", "position: relative;margin: 0px 2px!important;margin-top: -10% !important;height: 186px !important;");
+	            // $(".amazingcarousel-list div.abcd :eq(" + midImageIndex + ")").attr("style", "position: relative;margin: 0px 2px;margin-top: -10% ;height: 186px;");
+	            $(".amazingcarousel-list img:eq(" + (midImageIndex - 1) + ")").attr("style", "opacity:1.0 !important;");
+	            $(".amazingcarousel-list img:eq(" + (midImageIndex + 1) + ")").attr("style", "opacity:1.0 !important;");
+	          
+
+	        }
+	    });
+	</script>
+	
+<style type="text/css">
+
+.opaque
+{
+    opacity:1.0 !important;
+    
+    }
+    
+    .nonopaque
+    {
+        opacity:0.5;
+        
+        }
+</style>
+	
+</head>
+<body>
+
+    
+<!-- Insert to your webpage where you want to display the carousel -->
+<div style="margin:0px auto;">
+
+<div id="amazingcarousel-container-1"> 
+    <div id="amazingcarousel-1" style="display:block;position:relative;width:100%;max-width:1375px;margin:0px auto 0px; background-color:transparent; margin-top: 313px;">
+        <div class="amazingcarousel-list-container">
+            <ul class="amazingcarousel-list " style="margin-top: 2% !important;" ><!-- -->
+                <li class="amazingcarousel-item" >
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox"  id="div1">
+<div class="amazingcarousel-image  "><a href="javascript:void(0)" title="thumb-01"    id="img1"><img src="images/thumb-01.jpg"  alt="thumb-01" /></a></div>
+<div class="amazingcarousel-title">aaa</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div2">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-02"    id="img2"><img src="images/thumb-02.jpg"  alt="thumb-02" /></a></div>
+<div class="amazingcarousel-title">thumb-02</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item current"  >
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div3">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-03"  id="img3"><img src="images/thumb-03.jpg"  alt="thumb-03" class="active" /></a></div>
+<div class="amazingcarousel-title">thumb-03</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container CenterClass " id="div4" >
+<div class="amazingcarousel-image   " onclick=""><a href="javascript:void(0)" title="thumb-04"     id="img4"><img src="images/thumb-04.jpg"  alt="thumb-04" /></a></div>
+<div class="amazingcarousel-title">thumb-04</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div5">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-05"    id="img5"><img src="images/thumb-05.jpg"  alt="thumb-05" /></a></div>
+<div class="amazingcarousel-title clicked">thumb-05</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div6">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-06"    id="img6"><img src="images/thumb-06.jpg"  alt="thumb-06" /></a></div>
+<div class="amazingcarousel-title">thumb-06</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div7">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-07"    data-group="amazingcarousel-1"><img src="images/thumb-07.jpg"  alt="thumb-07" /></a></div>
+<div class="amazingcarousel-title">thumb-07</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div8">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-08"    data-group="amazingcarousel-1"><img src="images/thumb-08.jpg"  alt="thumb-08" /></a></div>
+<div class="amazingcarousel-title">thumb-08</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div9">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-09"    data-group="amazingcarousel-1"><img src="images/thumb-09.jpg"  alt="thumb-09" /></a></div>
+<div class="amazingcarousel-title">thumb-09</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div10">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-10"    data-group="amazingcarousel-1"><img src="images/thumb-10.jpg"  alt="thumb-10" /></a></div>
+<div class="amazingcarousel-title">thumb-10</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div11">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-11"    data-group="amazingcarousel-1"><img src="images/thumb-11.jpg"  alt="thumb-11" /></a></div>
+<div class="amazingcarousel-title">thumb-11</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div12">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-12"    data-group="amazingcarousel-1"><img src="images/thumb-12.jpg"  alt="thumb-12" /></a></div>
+<div class="amazingcarousel-title">thumb-12</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div13">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-13"    data-group="amazingcarousel-1"><img src="images/thumb-13.jpg"  alt="thumb-13" /></a></div>
+<div class="amazingcarousel-title">thumb-13</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div14">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-14"    data-group="amazingcarousel-1"><img src="images/thumb-14.jpg"  alt="thumb-14" /></a></div>
+<div class="amazingcarousel-title">thumb-14</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div15">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-15"    data-group="amazingcarousel-1"><img src="images/thumb-15.jpg"  alt="thumb-15" /></a></div>
+<div class="amazingcarousel-title">thumb-15</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div16">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-16"    data-group="amazingcarousel-1"><img src="images/thumb-16.jpg"  alt="thumb-16" /></a></div>
+<div class="amazingcarousel-title">thumb-16</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div17">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-17"    data-group="amazingcarousel-1"><img src="images/thumb-17.jpg"  alt="thumb-17" /></a></div>
+<div class="amazingcarousel-title">thumb-17</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div18" >
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-18"    data-group="amazingcarousel-1"><img src="images/thumb-18.jpg"  alt="thumb-18" /></a></div>
+<div class="amazingcarousel-title">thumb-18</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                     <div class="amazingcarousel-item-container CenterClass html5lightbox" id="div19">
+<div class="amazingcarousel-image"><a href="javascript:void(0)" title="thumb-19"    data-group="amazingcarousel-1"><img src="images/thumb-19.jpg"  alt="thumb-19" /></a></div>
+<div class="amazingcarousel-title">thumb-19</div>
+<div class="amazingcarousel-description"></div>                    </div>
+                </li>
+            </ul>
+            <div class="amazingcarousel-prev"></div>
+            <div class="amazingcarousel-next"></div>
+        </div>
+       
+    
+    </div>
+	 <div id="tooltip" style="position: relative;
+            margin-bottom: 20px;
+            height: 100px;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: large;
+			background-color:green;
+			width:98%;
+			width: 98.7%;
+			margin-left: 0.7%;
+        ">
+        </div>
+</div>
+	</div>
+<!-- End of body section HTML codes -->
+
+
+</body>
+</html>
